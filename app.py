@@ -14,7 +14,7 @@ def find_names(company):
 col1, col2 = st.columns(2)
 col1.image('car.jpg')
 col2.markdown("<br><h1>CAR<br>PRICE<br>PREDICTOR<h1><br>",True)
-time.sleep(1)
+time.sleep(2)
 
 col1, col2 = st.columns(2)
 company = col1.selectbox('SELECT COMPANY OF CAR', sorted(df['company'].unique()))
