@@ -34,9 +34,10 @@ engine = st.number_input("ENTER ENGINE CAPACITY OF CAR IN cc", step=1)
 col1,col2,col3 = st.columns([3,1,5])
 if col3.button("SUBMIT"):
     try:
-        price = pipe.predict(pd.DataFrame([[year,km_driven,fuel,seller_type,transmission,owner,mileage,engine,seats,company,model]],
+        input_data = pd.DataFrame([[year,km_driven,fuel,seller_type,transmission,owner,mileage,engine,seats,company,model]],
                         columns=['year','km_driven', 'fuel', 'seller_type',
-                                 'transmission', 'owner', 'mileage', 'engine', 'seats', 'company','model']))[0]
+                                 'transmission', 'owner', 'mileage', 'engine', 'seats', 'company','model'])
+        price = pipe.predict(input_data)[0]
         st.markdown(f"<h3>APPROXIMATE PRICE OF THE CAR COULD BE {round(np.exp(price))}<h3>",True)
     except Exception as e:
         print(e)    
