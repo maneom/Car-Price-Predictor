@@ -37,8 +37,8 @@ if col3.button("SUBMIT"):
         price = pipe.predict(pd.DataFrame([[year,km_driven,fuel,seller_type,transmission,owner,mileage,engine,seats,company,model]],
                         columns=['year','km_driven', 'fuel', 'seller_type',
                                  'transmission', 'owner', 'mileage', 'engine', 'seats', 'company','model']))[0]
+        st.markdown(f"<h3>APPROXIMATE PRICE OF THE CAR COULD BE {round(np.exp(price))}<h3>",True)
     except Exception e:
-        print(e)
-
-    st.markdown(f"<h3>APPROXIMATE PRICE OF THE CAR COULD BE {round(np.exp(price))}<h3>",True)
+        print(e)    
+        st.markdown(e)
    
