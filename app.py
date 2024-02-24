@@ -38,7 +38,7 @@ if col3.button("SUBMIT"):
                         columns=['year','km_driven', 'fuel', 'seller_type',
                                  'transmission', 'owner', 'mileage', 'engine', 'seats', 'company','model']))[0]
         st.markdown(f"<h3>APPROXIMATE PRICE OF THE CAR COULD BE {round(np.exp(price))}<h3>",True)
-    except Exception e:
+    except Exception as e:
         print(e)    
         st.markdown(e)
    
