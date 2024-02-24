@@ -47,16 +47,16 @@ if col3.button("SUBMIT"):
         'model': [model]
     }
 
-input_df = pd.DataFrame(data)
-print("Before prediction:")
-print("input_df:")
-print(input_df)
+    input_df = pd.DataFrame(data)
+    print("Before prediction:")
+    print("input_df:")
+    print(input_df)
 
-try:
-    price = pipe.predict(input_df)[0]
-    print("After prediction:")
-    print("price:", price)
-except Exception as e:
-    print("Error during prediction:")
-    print(e)
-    st.markdown(f"<h3>APPROXIMATE PRICE OF THE CAR COULD BE {round(np.exp(price))}<h3>",True)
+    try:    
+        price = pipe.predict(input_df)[0]
+        print("After prediction:")
+        print("price:", price)
+        st.markdown(f"<h3>APPROXIMATE PRICE OF THE CAR COULD BE {round(np.exp(price))}<h3>",True)
+    except Exception as e:
+        print("Error during prediction:")
+        print(e)
