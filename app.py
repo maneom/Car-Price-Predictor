@@ -18,7 +18,7 @@ time.sleep(2)
 
 col1, col2 = st.columns(2)
 company = col1.selectbox('SELECT COMPANY OF CAR', sorted(df['company'].unique()))
-model = col2.selectbox('SELECT COMPANY OF CAR', find_names(company))
+model = col2.selectbox('SELECT MODEL OF CAR', find_names(company))
 
 year = st.slider("SELECT PURCHASE YEAR OF CAR",min_value=1995, max_value=2020, step=1)
 km_driven = st.number_input("ENTER TOTAL KILOMETERS CAR DRIVED", step=1)
